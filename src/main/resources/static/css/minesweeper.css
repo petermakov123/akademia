@@ -1,0 +1,27 @@
+ body {
+	background-color: #ff8000;
+}
+img {
+	max-width: 100%;
+}
+
+h1 {
+	text-align: center;
+}
+h2 {
+	text-align: center;
+}
+body {
+	text-align: center;
+}
+
+table {
+	margin: auto;
+	border-collapse: collapse;
+}
+
+td {
+	padding: 0;
+	text-align: center;
+	max-width: 2em;
+} 

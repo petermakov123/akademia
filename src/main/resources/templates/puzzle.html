@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Puzzle</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<style type="text/css">
+body {
+	background-color: powderblue;
+}
+
+h1 {
+	color: blue;
+	font-family: verdana;
+	font-size: 300%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+a {
+	color: red;
+	text-align: center;
+}
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+table {
+	table-layout: fixed;
+	margin-left: auto;
+	margin-right: auto;
+	border-collapse: collapse;
+	border: 3px solid purple;
+}
+}
+</style>
+</head>
+<body>
+	<h1>Puzzle</h1>
+	<div th:if="${not @mainController.logged}">
+		You are not logged  <a href="/">please login</a><br/>
+	</div>
+	
+	<div th:if="${@mainController.logged}">
+		You are logged as <span th:text="${@mainController.loggedPlayer.name}"/><br/>
+	</div>
+
+	<a href="/puzzle">New Game</a>
+	<br />
+	<a href="/">Menu</a>
+	<br />
+
+
+	<div th:if="${@puzzleController.solved}">
+		WIN!!!!!!<br />
+	</div>
+
+	<div th:if="${not @puzzleController.solved}">
+		<div th:utext="${@puzzleController.htmlField}" />
+	</div>
+	
+	<h3>SCORE</h3>
+	<ol>
+  <li th:each="score: ${@puzzleController.scores}" >
+  <span th:text="${score.userName}"></span>
+  <span th:text="${score.value}"/>
+  </li>
+</ol>
+	<img src='/images/puzzle/puzzle.jpg' class="center">
+</body>
+</html>
+
+
+
+
+

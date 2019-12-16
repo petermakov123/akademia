@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Minesweeper</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/css/minesweeper.css">
+
+</head>
+<body>
+	<h1>Minesweeper</h1>
+
+	<a href="/minesweeper">New Game</a>
+	<br />
+
+	<!-- <span th:if="${not @minesweeperController.marking}">MARKING</span>
+	<span th:if="${ @minesweeperController.marking}">OPENING</span>  -->
+	<a href="/minesweeper/change">Mark Tile</a>
+	<br />
+	<a href="/">Menu</a>
+	<br />
+	<div th:utext="${@minesweeperController.htmlField}" />
+
+
+
+</body>
+</html>
+
